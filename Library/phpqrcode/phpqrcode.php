@@ -2427,7 +2427,7 @@
                 }
                 
                 // Shift 
-                array_shift($parity);
+               array_shift($parity);
                 if($feedback != $A0) {
                     array_push($parity, $ALPHA_TO[$this->modnn($feedback + $GENPOLY[0])]);
                 } else {

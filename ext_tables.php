@@ -20,14 +20,14 @@ $GLOBALS['TBE_STYLES']['stylesheet2'] = '../typo3conf/ext/defbu_authenticator/Re
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerModule(
     'DEFBU.DefbuAuthenticator',
-    'system',
+    'site',
     'tx_defbuauthenticator',
-    'bottom',
+    'top',
     [
         Authenticator::class => 'index, activate, deactivate'
     ],
     [
-        'access' => 'user',
+        'access' => 'user,group',
         'icon' => 'EXT:defbu_authenticator/Resources/Public/Icons/icon.svg',
         'labels' => 'LLL:EXT:defbu_authenticator/Resources/Private/Language/locallang_mod.xlf:Authenticator',
     ]

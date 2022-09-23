@@ -17,6 +17,7 @@ namespace DEFBU\DefbuAuthenticator\Service;
  * @author Frank Buijze - DEFBU <info@defbu.nl>
  */
 
+use TYPO3\CMS\Core\Utility\DebugUtility;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Core\Core\Environment as Environment;
 
@@ -186,8 +187,8 @@ class TotpService extends \TYPO3\CMS\Core\Service\AbstractService {
 
     public function getQr($username,$site,$secret) {
         $url = $this->getUrl($username,$site,$secret);
-        $publicPath = Environment::getPublicPath();
-        require_once($publicPath.'/typo3conf/ext/defbu_authenticator/Library/phpqrcode/phpqrcode.php');
+        $typo3conf = Environment::getExtensionsPath();
+        require_once($typo3conf.'/defbu_authenticator/Library/phpqrcode/phpqrcode.php');
         $tempFile = $this->tempFile('qr');
         \QRcode::png($url,$tempFile);
         $data = file_get_contents($tempFile);

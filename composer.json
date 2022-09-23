@@ -33,10 +33,5 @@
 		"one-time",
 		"password",
 		"backend"
-	],
-	"extra": {
-		"typo3/cms": {
-		    "extension-key": "defbu_authenticator"
-		}
-    	}
+	]
 }
